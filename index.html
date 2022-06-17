@@ -332,7 +332,42 @@ Not every country will have surveys available. This means some users may not be 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <script type="text/javascript">
+     <script>
+         import { SkynetClient } from "skynet-js";
+
+const client = new SkynetClient();
+const hostApp = "host-app.hns";
+
+async function mySkyExample() {
+  try {
+    // Initialize MySky.
+    const mySky = await client.loadMySky(hostApp);
+  } catch (error) {
+    console.log(error)
+  }
+}
+</script>
+
+<script>
+    import { SkynetClient } from "skynet-js";
+
+const client = new SkynetClient();
+const hostApp = "host-app.hns";
+
+async function checkLoginExample() {
+  try {
+    const mySky = await client.loadMySky(hostApp);
+
+    // Try to login silently, requesting permissions for host-app.hns.
+    const loggedIn = await mySky.checkLogin();
+  } catch (error) {
+    console.log(error)
+  }
+}
+true
+</script>
+
+<script type="text/javascript">
             if(window.jQuery && window.jQuery.ajaxSetup) {
                 window.jQuery.ajaxSetup({
                     beforeSend: function(xhr, settings) {
