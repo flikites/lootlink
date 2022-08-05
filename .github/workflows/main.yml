@@ -18,6 +18,6 @@ jobs:
         uses: SkynetLabs/deploy-to-skynet-action@v2.1.1
         with:
           upload-dir: ./
-          try-files: /sign-up.html
+          try-files: /index.html
           github-token: ${{ secrets.GITHUB_TOKEN }}
           registry-seed: ${{ secrets.REGISTRY_SEED || '' }}
